@@ -1,25 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {
-  HeaderSearchBar,
-  HeaderClassicSearchBar
-} from "react-native-header-search-bar";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <HeaderSearchBar onChangeText={text => console.log(text)} />
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center', 
-    marginTop: 80
+import {createAppContainer} from 'react-navigation'
+import {createStackNavigator} from 'react-navigation-stack';
+import Mainpage from './Mainpage'
+import Mypage from './Mypage'
+ 
+const App = createStackNavigator({
+  Main : {
+    screen : Mainpage,
+    navigationOptions: {
+      title: 'Main',
+    }
   },
-});
+  Mypage : {
+    screen : Mypage,
+    navigationOptions: {
+      title: 'Mypage',
+    }
+  },
+}
+);
+
+export default createAppContainer(App);
