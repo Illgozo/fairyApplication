@@ -8,12 +8,20 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@freakycoder/react-native-helpers": "1.0.1",
     "expo": "39.0.4",
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react-native-androw": "0.0.34",
+    "react-native-dynamic-vector-icons": "1.1.4",
+    "react-native-header-search-bar": "0.1.10",
+    "react-native-material-ripple": "0.9.1",
+    "react-native-safe-area-context": "3.1.4",
+    "react-native-vector-icons": "7.1.0",
+    "react-native-web": "~0.13.12",
+    "tslib": "2.0.3"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"
