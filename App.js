@@ -1,23 +1,48 @@
+import {createAppContainer} from 'react-navigation';
+import React from 'react';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Mypage from './Mypage';
+import Mainpage from './Mainpage';
+import Searchpage from './Searchpage';
 
-import {createAppContainer} from 'react-navigation'
-import {createStackNavigator} from 'react-navigation-stack';
-import Mainpage from './Mainpage'
-import Mypage from './Mypage'
- 
-const App = createStackNavigator({
-  Main : {
-    screen : Mainpage,
-    navigationOptions: {
-      title: 'Main',
-    }
+const TabNavigator = createBottomTabNavigator({
+  Mainpage: {
+    screen: Mainpage,
+    color:'#f08080',
   },
-  Mypage : {
-    screen : Mypage,
-    navigationOptions: {
-      title: 'Mypage',
-    }
+  Searchpage: {
+    screen: Searchpage,
   },
-}
+  Mypage: {
+    screen: Mypage,
+  },
+},
+{
+  defaultNavigationOptions: ({navigation}) => ({
+    tabBarIcon: ({horizontal}) => {
+      const {routeName} = navigation.state;
+      let iconName;
+      if (routeName === 'Mypage') {
+        iconName = 'ios-person';
+      } else if (routeName === 'Mainpage') {
+        iconName = 'ios-book';
+      }else if (routeName === 'Searchpage') {
+        iconName = 'ios-search';
+      }
+      return (
+        <Ionicons
+          name={iconName}
+          size={horizontal ? 28 : 35}
+          color='#00bfff'
+        />
+      );
+    },
+    tabBarOptions: {
+      style: {height:60},
+      color:"#f08080",
+    }
+  }),
+},
 );
-
-export default createAppContainer(App);
+export default createAppContainer(TabNavigator);
