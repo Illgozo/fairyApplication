@@ -6,7 +6,7 @@ import {
   HeaderClassicSearchBar
 } from "react-native-header-search-bar";
 
-export default function App() {
+export default function Searchpage() {
   return (
     <View style={styles.container}>
       <HeaderSearchBar onChangeText={text => console.log(text)} />
