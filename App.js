@@ -10,6 +10,7 @@ const TabNavigator = createBottomTabNavigator({
   Mainpage: {
     screen: Mainpage,
     color:'#f08080',
+
   },
   Searchpage: {
     screen: Searchpage,
