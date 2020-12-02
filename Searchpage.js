@@ -2,12 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { HeaderSearchBar } from "react-native-header-search-bar";
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class Searchpage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontWeight: 'bold' }}>Find your favorite fairytale</Text>
+        <Text style={{ fontWeight: 'bold', fontSize:25 }}>Find your favorite fairytale</Text>
         <HeaderSearchBar onChangeText={text => console.log(text)} />
         <StatusBar style="auto" />
         <FlatList
@@ -18,12 +19,16 @@ export default class Searchpage extends Component {
             {key: 'Sleeping Beauty'},
             {key: 'Little Red Riding Hood'},
           ]}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          renderItem={({item}) => (
+          <TouchableOpacity>
+          <Text style={styles.item}>{item.key}</Text>
+          </TouchableOpacity>
+          )}
         />
 
-        <View style={{ height: 400, width: 400, marginTop: 10 }}>
+        <View style={{ height: 400, width: "100%", marginTop: 10 }}>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 7 }}>
-                <Text style={{ fontWeight: 'bold' }}>Ranking Top 5</Text>
+                <Text style={{ fontWeight: 'bold', fontSize:25 }}>Ranking Top 5</Text>
             </View>
 
             <View style={{ flex: 7 }}>
@@ -45,12 +50,11 @@ export default class Searchpage extends Component {
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center', 
-      marginTop: 150,
+      padding:"10%"
     },
     item: {
-      padding: 10,
-      marginRight: 95,
+      padding: 20,
+      marginHorizontal:"5%",
       fontSize: 18,
       height: 40,
     },

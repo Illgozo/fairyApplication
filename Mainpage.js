@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet,View, Image,ImageBackground, FlatList} from 'react-native';
+import {Alert,StyleSheet,View, Image,ImageBackground, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 var styles = StyleSheet.create({
@@ -15,16 +15,17 @@ var styles = StyleSheet.create({
     height:"100%",
   },
   boardImage:{
+    resizeMode:'contain',
     marginTop:"10%",
-    marginLeft:"5%",
-    width:"95%",
+    marginHorizontal:"6%",
+    width:"93%",
     height:"95%",
   },
   imageThumbnail: {
     justifyContent: 'center',
     alignItems: 'center',
     resizeMode:'contain',
-    width:190,
+    width:180,
     height:250,
   },
   bookContainer: {
@@ -65,6 +66,10 @@ const bookArr=[
 ];
 
 export default class Mainpage extends Component {
+  clickBook (idx)
+  {
+    this.props.navigation.navigate('SelectCharacterpage');
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -75,7 +80,7 @@ export default class Mainpage extends Component {
               data={bookArr}
               style={styles.bookContainer}
               renderItem={({item}) => (
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=> {this.clickBook(item.idx)}}>
                 <View
                   style={{
                     flex:1,

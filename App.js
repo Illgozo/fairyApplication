@@ -1,17 +1,29 @@
-import {createAppContainer} from 'react-navigation';
+import {createAppContainer, } from 'react-navigation';
 import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+import { createStackNavigator } from 'react-navigation-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Mypage from './Mypage';
 import Mainpage from './Mainpage';
 import Searchpage from './Searchpage';
+import SelectCharacterpage from './SelectCharacterpage';
+
+
+const selectCharacterStack = createStackNavigator(
+  {
+    Mainpage,
+    SelectCharacterpage
+  },
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      title: 'Mainpage',
+  }),
+  initialRouteName: 'Mainpage',
+  }
+);
 
 const TabNavigator = createBottomTabNavigator({
-  Mainpage: {
-    screen: Mainpage,
-    color:'#f08080',
-
-  },
+  Mainpage: selectCharacterStack,
   Searchpage: {
     screen: Searchpage,
   },
@@ -46,4 +58,16 @@ const TabNavigator = createBottomTabNavigator({
   }),
 },
 );
-export default createAppContainer(TabNavigator);
+
+const AppStack = createStackNavigator(
+  {
+      TabNavigator: {
+          screen: TabNavigator,
+          navigationOptions: ({navigation}) => ({
+              header: null,
+          }),
+      },
+  }
+);
+
+export default createAppContainer(AppStack);
