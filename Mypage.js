@@ -1,39 +1,86 @@
-// Sub1Screen.js
 import React, { Component } from 'react';
-import {StyleSheet,Text,View} from 'react-native';
+import {StyleSheet,Text,View,TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
  
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#87ceeb',
     width: "80%",
-    height: "20%",
+    height: "23%",
     marginHorizontal:"10%",
-    marginTop:"15%",
+    marginTop:"30%",
     borderRadius: 30,
+  },
+  profileText:{
+    fontWeight: 'bold', 
+    fontSize: 30, 
+    marginLeft: "10%", 
+    marginTop: "-11%"
   },
   profile:{
     backgroundColor: '#fff5ee',
-    width: 160,
-    height: 160,
+    width: "45%",
+    height: "80%",
     borderRadius: 100,
-    marginVertical:"5%",
-    marginHorizontal:"5%",
+    marginLeft: "6%",
+    marginTop: "-30%",
     alignContent:"center"
   },
+  profileIcon:{
+    width: "70%",
+    height: "70%",
+    marginTop: "10%",
+    marginLeft: "15%"
+  },
+  profileName:{
+    fontWeight: 'bold', 
+    fontSize: 50, 
+    marginLeft: "54%", 
+    marginTop: "19%"
+  },
+  ModifyPrfileIcon:{
+    width: "100%",
+    height: "100%",
+    marginTop: "-5%",
+    marginLeft: "20%"
+  },
+  MypageButton:{
+    backgroundColor: '#87ceeb',
+    width:"85%",
+    height:"35%",
+    marginTop:"20%",
+    marginLeft:"8%",
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
 
 export default class Mypage extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.profileText}>Profile</Text>
+        <Text style={styles.profileName}>Jamie</Text>
         <View style={styles.profile}>
-          <Ionicons
-            name={"ice-cream-outline"}
-            size={100}
-            color='#00bfff'
-          />
+          <Ionicons style={styles.profileIcon} name="ios-paw" size={120} color='#00bfff'/>
         </View>
+        <TouchableOpacity style={styles.MypageButton}>
+          <Ionicons style={styles.ModifyPrfileIcon} name="ios-person" size={60} color='#fff5ee'/>
+          <Text style={{fontSize: 25, marginLeft: "25%", marginTop: "-15%"}}>Modify Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.MypageButton}>
+          <Ionicons style={styles.ModifyPrfileIcon} name="ios-cart" size={60} color='#fff5ee'/>
+          <Text style={{fontSize: 25, marginLeft: "25%", marginTop: "-15%"}}>Buy Premium</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.MypageButton}>
+          <Ionicons style={styles.ModifyPrfileIcon} name="ios-megaphone" size={60} color='#fff5ee'/>
+          <Text style={{fontSize: 25, marginLeft: "25%", marginTop: "-15%"}}>Write Feedback</Text>
+        </TouchableOpacity>
+        
+
+        
+
       </View>
     );
   }
