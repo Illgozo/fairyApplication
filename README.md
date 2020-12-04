@@ -14,6 +14,7 @@ AI 성우와 함께 읽는 참여형 영어 동화 어플리케이션
 ## References
 - OCR API : [Google Cloud Vision API](https://cloud.google.com/vision/)
 - NLP 참고문서 : [딥러닝을 위한 자연어처리 입문](https://wikidocs.net/book/2155)
+- React Native : https://reactnative.dev/
 
 * * *
 ## Team Illgozo
