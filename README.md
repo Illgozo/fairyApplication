@@ -23,7 +23,10 @@ AI 성우와 함께 읽는 참여형 영어 동화 어플리케이션
 * * *
 ## Team Illgozo
 - [김하연](https://github.com/haayun) 
-   * [haayun-log](https://haayun-log.tistory.com/)
-- [박혜린](https://github.com/hyeppy226) / [hyeppy-log](https://hyeppy-log.tistory.com/)
-- [유효민](https://github.com/Hyomin6349) / [validming99](https://validming99.tistory.com/)
-- [이다해](https://github.com/dahaelee) / [davelop](https://davelop.tistory.com/) 
+   * Google Cloud Vision API : [haayun-log](https://haayun-log.tistory.com/)
+- [박혜린](https://github.com/hyeppy226) 
+   * 어플리케이션 구현 (ReactNative) : [hyeppy-log](https://hyeppy-log.tistory.com/)
+- [유효민](https://github.com/Hyomin6349) 
+   * 어플리케이션 구현 (ReactNative) : [validming99](https://validming99.tistory.com/)
+- [이다해](https://github.com/dahaelee)
+   * NLTK라이브러리 : [davelop](https://davelop.tistory.com/) 
