@@ -3,8 +3,7 @@ AI 성우와 함께 읽는 참여형 영어 동화 어플리케이션
 
 ## 프로젝트 소개
 <p><img src="https://user-images.githubusercontent.com/53745427/101320975-f5d4f400-38a7-11eb-88bd-ac2ae636ed2b.jpg" width="400"></p>
-- [fAIry 소개 영상](https://www.youtube.com/watch?v=mKIUlTLbdkA)
-- [fAIry 사업 계획 영상](https://www.youtube.com/watch?v=6pO11v54UNk)
+
 
 ## 시연영상
 [fAIry 어플리케이션 시연영상](https://www.youtube.com/watch?v=YHzLXMpjRxw)
