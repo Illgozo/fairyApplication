@@ -64,7 +64,7 @@ const AppStack = createStackNavigator(
       TabNavigator: {
           screen: TabNavigator,
           navigationOptions: ({navigation}) => ({
-              header: null,
+              headerShown: false,
           }),
       },
   }

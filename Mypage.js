@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     marginHorizontal:"10%",
     marginVertical:"20%",
     borderRadius: 30,
+
   },
   profileText:{
     fontWeight: 'bold', 
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     width: isIphone?100:200,
     height: isIphone?100:200,
     borderRadius: 100,
-    marginLeft:isIphone?"8%":"6%",
+    marginLeft:isIphone?"12%":"6%",
     marginTop: isIphone?"-25%":"-18%",
     alignContent:"center",
     justifyContent: 'center',
@@ -32,12 +33,13 @@ const styles = StyleSheet.create({
   profileIcon:{
     width: isIphone?"100%":"70%",
     height: isIphone?"100%":"70%",
+    marginLeft: "8%",
     marginHorizontal:"25%"
   },
   profileName:{
     fontWeight: 'bold', 
     fontSize: 50, 
-    marginLeft: "54%", 
+    marginLeft: "49%", 
     marginTop: "19%"
   },
   ModifyPrfileIcon:{
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#87ceeb',
     width:"85%",
     height:"35%",
-    marginTop:"10%",
+    marginTop:"20%",
     marginLeft:"8%",
     borderRadius: 20,
     justifyContent: 'center',
@@ -65,7 +67,7 @@ export default class Mypage extends Component {
         <Text style={styles.profileText}>Profile</Text>
         <Text style={styles.profileName}>Jamie</Text>
         <View style={styles.profile}>
-          <Ionicons style={styles.profileIcon} name="ios-paw" size={120} color='#00bfff'/>
+          <Ionicons style={styles.profileIcon} name="ios-paw" size={105} color='#00bfff'/>
         </View>
         <TouchableOpacity style={styles.MypageButton}>
           <Ionicons style={styles.ModifyPrfileIcon} name="ios-person" size={60} color='#fff5ee'/>
