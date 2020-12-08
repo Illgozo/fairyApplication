@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {TouchableOpacity,Text,StyleSheet,View, Image,ImageBackground} from 'react-native';
+import {Dimensions,TouchableOpacity,Text,StyleSheet,View, Image,ImageBackground} from 'react-native';
 
+var isIphone =Dimensions.get('window').height<1000 ? true:false;
 
 var styles = StyleSheet.create({
   container: {
@@ -31,8 +32,8 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
   },
   imageThumbnail: {
-    width:180,
-    height:250,
+    width:isIphone?100:180,
+    height:isIphone?150:250,
     marginLeft:"5%",
     marginVertical:"5%"
   },
@@ -81,20 +82,20 @@ export default class Mainpage extends Component {
             <View style={styles.bookinfo}>
                 <Image source={require('./assets/book2.jpg')} style={styles.imageThumbnail}/>
                 <View style={styles.infoContainer}>
-                    <Text style={{ fontWeight: 'bold', fontSize:25}}>Hanzel and Gretel</Text>
-                    <Text style={{ marginTop:"5%",fontSize:17}}>Wilhelm Grimm (1786.2.24~1859.12.16)</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25}}>Hanzel and Gretel</Text>
+                    <Text style={{ marginTop:"5%",fontSize:isIphone?10:17}}>Wilhelm Grimm (1786.2.24~1859.12.16)</Text>
                 </View>
             </View>
             <View style={styles.characterSelection}>
-                <Text style={{ fontWeight: 'bold', fontSize:20, marginBottom:"2%"}}>Select Your Character!</Text>
+                <Text style={{ fontWeight: 'bold', fontSize:isIphone?15:20, marginBottom:"2%"}}>Select Your Character!</Text>
                 <TouchableOpacity style={styles.characterButton}>
-                 <Text style={{ fontWeight: 'bold', fontSize:25}}>Mom</Text>
+                 <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25}}>Mom</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.characterButton}>
-                 <Text style={{ fontWeight: 'bold', fontSize:25}}>Dad</Text>
+                 <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25}}>Dad</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.characterButton}>
-                 <Text style={{ fontWeight: 'bold', fontSize:25}}>Witch</Text>
+                 <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25}}>Witch</Text>
                 </TouchableOpacity>
             </View>
           </ImageBackground>

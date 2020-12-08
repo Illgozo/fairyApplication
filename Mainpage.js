@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Alert,StyleSheet,View, Image,ImageBackground, FlatList} from 'react-native';
+import {Dimensions,Alert,StyleSheet,View, Image,ImageBackground, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+
+var isIphone =Dimensions.get('window').height<1000 ? true:false;
 
 var styles = StyleSheet.create({
   container: {
@@ -25,12 +27,12 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     resizeMode:'contain',
-    width:180,
-    height:250,
+    width: isIphone ? 100:180,
+    height:isIphone ? 150:250,
   },
   bookContainer: {
-    marginHorizontal:"8%",
-    marginVertical:"10%",
+    marginHorizontal:isIphone ? "4%":"8%",
+    marginVertical:isIphone ? "5%":"10%",
   },
 });
 
@@ -85,7 +87,7 @@ export default class Mainpage extends Component {
                   style={{
                     flex:1,
                     flexDirection:'column',
-                    margin:10
+                    margin:isIphone ? 5:10,
                   }}>
                     <Image
                       style={styles.imageThumbnail}

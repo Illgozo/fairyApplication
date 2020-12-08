@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {StyleSheet,Text,View,TouchableOpacity} from 'react-native';
+import {Dimensions, StyleSheet,Text,View,TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
+var isIphone =Dimensions.get('window').height<1000 ? true:false;
  
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +10,7 @@ const styles = StyleSheet.create({
     width: "80%",
     height: "23%",
     marginHorizontal:"10%",
-    marginTop:"30%",
+    marginVertical:"20%",
     borderRadius: 30,
   },
   profileText:{
@@ -19,18 +21,18 @@ const styles = StyleSheet.create({
   },
   profile:{
     backgroundColor: '#fff5ee',
-    width: "45%",
-    height: "80%",
+    width: isIphone?100:200,
+    height: isIphone?100:200,
     borderRadius: 100,
-    marginLeft: "6%",
-    marginTop: "-30%",
-    alignContent:"center"
+    marginLeft:isIphone?"8%":"6%",
+    marginTop: isIphone?"-25%":"-18%",
+    alignContent:"center",
+    justifyContent: 'center',
   },
   profileIcon:{
-    width: "70%",
-    height: "70%",
-    marginTop: "10%",
-    marginLeft: "15%"
+    width: isIphone?"100%":"70%",
+    height: isIphone?"100%":"70%",
+    marginHorizontal:"25%"
   },
   profileName:{
     fontWeight: 'bold', 
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#87ceeb',
     width:"85%",
     height:"35%",
-    marginTop:"20%",
+    marginTop:"10%",
     marginLeft:"8%",
     borderRadius: 20,
     justifyContent: 'center',
