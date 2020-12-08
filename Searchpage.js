@@ -1,14 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import {Dimensions, FlatList, StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { HeaderSearchBar } from "react-native-header-search-bar";
 import {TouchableOpacity} from 'react-native-gesture-handler';
+
+var isIphone =Dimensions.get('window').height<1000 ? true:false;
 
 export default class Searchpage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontWeight: 'bold', fontSize:25 }}>Find your favorite fairytale</Text>
+        <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25 }}>Find your favorite fairytale</Text>
         <HeaderSearchBar onChangeText={text => console.log(text)} />
         <StatusBar style="auto" />
         <FlatList
@@ -26,9 +28,9 @@ export default class Searchpage extends Component {
           )}
         />
 
-        <View style={{ height: 400, width: "100%", marginTop: 10 }}>
+        <View style={{ height: isIphone?200:400, width: "100%", marginTop: 10 }}>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 7 }}>
-                <Text style={{ fontWeight: 'bold', fontSize:25 }}>Ranking Top 5</Text>
+                <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25 }}>Ranking Top 5</Text>
             </View>
 
             <View style={{ flex: 7 }}>
@@ -53,14 +55,14 @@ export default class Searchpage extends Component {
       padding:"10%"
     },
     item: {
-      padding: 20,
+      padding: isIphone?10:20,
       marginHorizontal:"5%",
-      fontSize: 18,
-      height: 40,
+      fontSize: isIphone?15:18,
+      height: isIphone?30:40,
     },
     RankImage:{
-      width: 220,
-      height: 320,
+      width: isIphone?100:220,
+      height:isIphone?150:320,
       marginRight: 10,
     },
   });
