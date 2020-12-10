@@ -12,7 +12,6 @@ export default class Searchpage extends Component {
       <View style={styles.container}>
         <Text style={{ fontWeight: 'bold', fontSize:isIphone?20:25 }}>Find your favorite fairytale</Text>
         <HeaderSearchBar onChangeText={text => console.log(text)} />
-        <StatusBar style="auto" />
         <FlatList
           data={[
             {key: 'Cinderella'},
@@ -21,6 +20,7 @@ export default class Searchpage extends Component {
             {key: 'Sleeping Beauty'},
             {key: 'Little Red Riding Hood'},
           ]}
+          style={{marginVertical: isIphone?"5%":"5%", marginHorizontal: isIphone?"5%":"5%"}}
           renderItem={({item}) => (
           <TouchableOpacity>
           <Text style={styles.item}>{item.key}</Text>
@@ -55,7 +55,6 @@ export default class Searchpage extends Component {
       padding:"10%"
     },
     item: {
-      padding: isIphone?10:20,
       marginHorizontal:"5%",
       fontSize: isIphone?15:18,
       height: isIphone?30:40,
